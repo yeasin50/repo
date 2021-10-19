@@ -20,7 +20,7 @@ class Quiz extends StatelessWidget {
           questions[questionIndex]['questionText'] as String,
         ), //0 index for 1st element of list :
         ...(questions[questionIndex]['answers'] as List<String>).map((answer) {
-          return Answer(answerQuestion(), answer);
+          return Answer(answerQuestion, answer);
         }).toList()
       ],
     );
