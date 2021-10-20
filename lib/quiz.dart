@@ -19,10 +19,13 @@ class Quiz extends StatelessWidget {
         Question(
           questions[questionIndex]['questionText'] as String,
         ), //0 index for 1st element of list :
-        ...(questions[questionIndex]['answers'] as List<String>).map((answer) {
-          return Answer(answerQuestion, answer);
+        ...(questions[questionIndex]['answers'] as List<Map<String, Object>>)
+            .map((answer) {
+          return Answer(
+              () => answerQuestion(answer['score']), answer['text'] as String);
         }).toList()
       ],
     );
   }
 }
+//line 24 when button is pressed execute this
