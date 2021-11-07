@@ -24,19 +24,19 @@ class _MyAppState extends State<MyApp> {
     {
       'questionText': 'What\'s your favourite color?',
       'answers': [
-        {'text': 'Black', 'score': 10},
-        {'text': 'Blue', 'score': 5},
-        {'text': 'Yellow', 'score': 3},
-        {'text': 'Orange', 'score': 1},
+        {'text': 'Black', 'score': 5},
+        {'text': 'Green', 'score': 1},
+        {'text': 'Yellow', 'score': 2},
+        {'text': 'White', 'score': 1},
       ], //map
     },
     {
       'questionText': 'What\'s your favourite animal?',
       'answers': [
         {'text': 'Rabbit', 'score': 5},
-        {'text': 'Snake', 'score': 7},
+        {'text': 'Snake', 'score': 6},
         {'text': 'Elephant', 'score': 1},
-        {'text': 'Giraffe', 'score': 3},
+        {'text': 'Giraffe', 'score': 5},
       ],
     },
     {
@@ -68,6 +68,7 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       _questionIndex = _questionIndex + 1;
     });
+    // print(_questions[_questionIndex]);
     print(_questionIndex); //to ensure private property thats why underscore
     if (_questionIndex < _questions.length) {
       //questionIndex starts from 0 , 1, 2, true question.length =  3 (becoz 3 qts)
@@ -87,7 +88,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('My First App'),
+          title: Text('Quiz App'),
         ),
         body: _questionIndex < _questions.length
             ? Quiz(
@@ -100,3 +101,52 @@ class _MyAppState extends State<MyApp> {
     ); //named argument
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // for buttons
+// class Firstpage extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: Text('Home')),
+//       body: Center(
+//           child: RaisedButton(
+//         onPressed: () {
+//           Navigator.of(context).push(
+//               MaterialPageRoute(builder: (context) => Choose_your_levelpg()));
+//         },
+//         child: Text('Let' 's get started'),
+//       )),
+//     );
+//   }
+// }
+
+// class Choose_your_levelpg extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: Text('Choose your level')),
+//       body: Center(
+//           child: RaisedButton(
+//         onPressed: () {
+//           Navigator.of(context)
+//               .push(MaterialPageRoute(builder: (context) => Firstpage()));
+//         },
+//         child: Text('Get started'),
+//       )),
+//     );
+//   }
+// }
